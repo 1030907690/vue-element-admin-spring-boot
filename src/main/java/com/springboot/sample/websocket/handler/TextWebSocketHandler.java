@@ -74,8 +74,7 @@ public class TextWebSocketHandler extends SimpleChannelInboundHandler<TextWebSoc
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) {
         log.info("接收到客户端的消息:[{}]", msg.text());
-
-
+        ctx.channel().writeAndFlush(new TextWebSocketFrame("服务端收到消息 " + msg.text()));
     }
 
     @Override
