@@ -28,6 +28,7 @@ public class ApplicationInitialize implements CommandLineRunner, EnvironmentAwar
     @Resource
     private ApplicationContext applicationContext;
 
+    @Resource
     private Environment environment;
 
     @Value("${netty.config.ws.port}")
